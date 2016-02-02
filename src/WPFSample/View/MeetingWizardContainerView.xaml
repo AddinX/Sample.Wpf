@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="WPFSample.WPF.View.MeetingWizardContainerView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converter="clr-namespace:WPFSample.WPF.Converter"
+      xmlns:view1="clr-namespace:WPFSample.WPF.View"
+      xmlns:viewModel="clr-namespace:WPFSample.WPF.ViewModel"
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="600">
+
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type viewModel:MeetingWizardFirstViewModel}">
+            <!--  Starting View -->
+            <view1:MeetingWizardFirstView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:MeetingWizardSecondViewModel}">
+            <!--  Info View -->
+            <view1:MeetingWizardSecondView/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewModel:MeetingWizardLastViewModel}">
+            <!--  Finishing View -->
+            <view1:MeetingWizardLastView/>
+        </DataTemplate>
+
+        <converter:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" MaxHeight="100"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*" MaxHeight="70"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" MaxWidth="200" MinWidth="130" />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="5*" MinWidth="250"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.RowSpan="3" Grid.Column="0" Grid.Row="0">
+            <Grid.Background>
+                <ImageBrush ImageSource="/WPFSample.WPF;component/Images/bg.jpg"/>
+            </Grid.Background>
+            <StackPanel  VerticalAlignment="Center">
+                <Image Source="/WPFSample.WPF;component/Images/logo-addin-x.png"
+                       Height="100" Margin="10" HorizontalAlignment="Center"/>
+                
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+        	        FontSize="20" Padding="0,5,0,5" TextAlignment="Center"
+        	        Text="WPF sample wizard" x:Name="Title" TextWrapping="Wrap"  Margin="6,0,5,0"  />
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                    VerticalAlignment="Center">
+            <ContentPresenter Content="{Binding CurrentViewModel}" />
+        </StackPanel>
+        <Grid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Background="AliceBlue">
+            
+        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            
+            <StackPanel Orientation="Horizontal">
+                <Button Margin="10,10,2,10" Content="Back" Width="75" Name="Back" Height="30"
+                        Visibility="{Binding IsBackBtnVisible, 
+                                    Converter={StaticResource BoolToVisibilityConverter}}" 
+                        Command="{Binding BackCommand}" />
+
+                <Button Margin="2,10,10,10" Content="Next" Width="75" Height="30"
+                        Name="Next" 
+                        Visibility="{Binding IsNextBtnVisible, 
+                                    Converter={StaticResource BoolToVisibilityConverter}}"
+                        Command="{Binding NextCommand}"/>
+            </StackPanel>
+
+            <Button Margin="10,10" Content="Finish" Width="75" Height="30"
+                    Name="End" 
+                    Visibility="{Binding IsFinishBtnVisible,
+                                   Converter={StaticResource BoolToVisibilityConverter}}"
+                    Command="{Binding FinishCommand}"/>
+        </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>

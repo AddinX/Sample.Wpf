@@ -1,2 +1,2 @@
-# Sample
-Samples of add-ins using the helpers class and Fluent ribbon builder
+# WPF Sample - Add-in X
+Add-in sample using a WPF form with Excel-DNA

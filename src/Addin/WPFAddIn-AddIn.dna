@@ -1,0 +1,24 @@
+<DnaLibrary Name="WPFAddIn Add-In" RuntimeVersion="v4.0">
+  <ExternalLibrary Path="WPFSample.AddIn.dll" LoadFromBytes="true" Pack="true" />
+  
+  <Reference Path="AddinX.Bootstrap.Autofac.dll" LoadFromBytes="true" Pack="true" />
+  <Reference Path="AddinX.Bootstrap.Contract.dll" LoadFromBytes="true" Pack="true" />
+  <Reference Path="AddinX.Logging.Contract.dll" LoadFromBytes="true" Pack="true" />
+  <Reference Path="AddinX.Logging.SerilogWrapper.dll" LoadFromBytes="true" Pack="true" />
+  <Reference Path="AddinX.Ribbon.Contract.dll" LoadFromBytes="true" Pack="true" />
+  <Reference Path="AddinX.Ribbon.ExcelDna.dll" LoadFromBytes="true" Pack="true" />
+  <Reference Path="AddinX.Ribbon.Implementation.dll" LoadFromBytes="true" Pack="true" />
+  <Reference Path="AddinX.Wpf.Implementation.dll" LoadFromBytes="true" Pack="true" />
+  <Reference Path="AddinX.Wpf.Contract.dll" LoadFromBytes="true" Pack="true" />
+  
+  <Reference Path="ExcelApi.dll" LoadFromBytes="true" Pack="true" />
+  <Reference Path="NetOffice.dll" LoadFromBytes="true" Pack="true" />
+  <Reference Path="VBIDEApi.dll" LoadFromBytes="true" Pack="true" />
+  <Reference Path="OfficeApi.dll" LoadFromBytes="true" Pack="true" />
+
+  <Reference Path="Autofac.dll" LoadFromBytes="true" Pack="true" />
+  <Reference Path="Prism.dll" LoadFromBytes="true" Pack="true" />
+  <Reference Path="Serilog.dll" LoadFromBytes="true" Pack="true" />
+  <Reference Path="Serilog.FullNetFx.dll" LoadFromBytes="true" Pack="true" />
+  
+</DnaLibrary>
