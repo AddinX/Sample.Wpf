@@ -70,7 +70,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AddinX.Bootstrap.Autofac, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\AddinX.Bootstrap.Autofac.1.0.0\lib\net45\AddinX.Bootstrap.Autofac.dll</HintPath>
+      <HintPath>..\..\packages\AddinX.Bootstrap.Autofac.1.0.1\lib\net45\AddinX.Bootstrap.Autofac.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AddinX.Bootstrap.Contract, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
