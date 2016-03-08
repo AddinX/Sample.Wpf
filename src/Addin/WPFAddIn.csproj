@@ -98,11 +98,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="AddinX.Wpf.Contract, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\AddinX.Wpf.Contract.1.0.0\lib\net45\AddinX.Wpf.Contract.dll</HintPath>
+      <HintPath>..\..\packages\AddinX.Wpf.Contract.1.0.3\lib\net45\AddinX.Wpf.Contract.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="AddinX.Wpf.Implementation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\AddinX.Wpf.Implementation.1.0.0\lib\net45\AddinX.Wpf.Implementation.dll</HintPath>
+      <HintPath>..\..\packages\AddinX.Wpf.Implementation.1.0.3\lib\net45\AddinX.Wpf.Implementation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Autofac, Version=3.5.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">

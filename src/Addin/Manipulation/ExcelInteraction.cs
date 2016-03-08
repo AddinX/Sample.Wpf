@@ -18,24 +18,27 @@ namespace WPFSample.AddIn.Manipulation
 
         public IList<string> WorksheetsName()
         {
+
             if (excelApp?.Sheets == null)
             {
                 return new List<string>();
             }
             return excelApp.Sheets
-                .Select(sheet => ((Worksheet) sheet).Name)
+                .Select(sheet => ((Worksheet)sheet).Name)
                 .ToList();
+
         }
 
         public void WriteMeeting(ExcelMeetingDataRequest request)
         {
-            
-            var sheet = (Worksheet) excelApp.Sheets
-                .First(o => ((Worksheet) o).Name 
+
+
+            var sheet = (Worksheet)excelApp.Sheets
+                .First(o => ((Worksheet)o).Name
                             == request.SheetDestination);
-            
+
             // Write Header
-            var header = new List<object> {"Name","Date","Start","End"};
+            var header = new List<object> { "Name", "Date", "Start", "End" };
 
             var destination = sheet.get_Range("A1", Type.Missing);
             WriteListHorizontally(destination, header);
@@ -56,8 +59,9 @@ namespace WPFSample.AddIn.Manipulation
                 request.Data.EndTime.ToString("hh:mm")
             };
 
-            destination = sheet.Cells[nextRow,1];
+            destination = sheet.Cells[nextRow, 1];
             WriteListHorizontally(destination, entry);
+
         }
 
         private Range WriteListHorizontally(Range destination, IList<object> list)
