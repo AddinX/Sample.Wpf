@@ -15,9 +15,11 @@ namespace WPFSample.AddIn.Startup
             bootstrapper?.Builder.RegisterType<MainWindowViewModel>();
 
             bootstrapper?.Builder.RegisterType<MeetingWizardContainerViewModel>();
+            bootstrapper?.Builder.RegisterType<MeetingWizardContainerView>();
+
             bootstrapper?.Builder.RegisterType<MeetingController>();
 
-            bootstrapper?.Builder.RegisterType<MeetingWizardContainerView>();
+            
             bootstrapper?.Builder.RegisterType<MeetingWizardFirstView>();
             bootstrapper?.Builder.RegisterType<MeetingWizardSecondView>();
             bootstrapper?.Builder.RegisterType<MeetingWizardLastView>();
